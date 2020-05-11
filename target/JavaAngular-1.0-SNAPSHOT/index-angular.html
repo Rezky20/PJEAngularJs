@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Java Enterprise</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="js/ng/angular.min.js"></script>
+        <script src="js/app/app.js"></script>
+        <script src="js/app/main/maincontroller.js"></script>
+        <script src="js/app/main/mainservice.js"></script>
+
+    </head>
+    <body ng-app="je">
+        <div ng-controller="MainController">
+            <div>
+                {{title}}
+                <br>
+            </div>
+            <div>
+                Nama : <input type="text" ng-model="nama"/> <br>
+                <button ng-click="submit()">Submit</button>
+            </div>
+            <!--            <div>
+                            {{mahasiswa.nim}}
+                            {{mahasiswa.nama}}
+                            {{mahasiswa.mataKuliah}}
+                            {{mahasiswa.tanggalLahir|date}}
+                            <br>
+                        </div>-->
+            <div ng-repeat="book in books">
+                <hr>
+                <label>Title : </label>{{book.title}}<br>
+                <label>Author : </label>{{book.author}}<br>
+                <label>Price : </label>{{book.price}}<br>
+                <label>Pub Date : </label>{{book.pubdate| date}}<br>
+                <button ng-click="viewAlert($index)">View Alert</button><br>
+                <hr>
+            </div>
+            <div>
+                <hr>
+                    {{kalkulator}}
+                <hr>
+                Angka 1 : <input type="text" ng-model="angkaA"><br>
+                Angka 2 : <input type="text" ng-model="angkaB"><br>
+                Hasil : {{hasil}}
+                <br>
+                <br>
+                <button ng-click="penambahan()">+</button>
+                <button ng-click="pengurangan()">-</button>
+                <button ng-click="perkalian()">x</button>
+                <button ng-click="pembagian()">/</button>
+            </div>
+        </div>
+    </body>
+</html>
