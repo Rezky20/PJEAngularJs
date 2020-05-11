@@ -13,10 +13,31 @@ and open the template in the editor.
         <script src="js/app/app.js"></script>
         <script src="js/app/main/maincontroller.js"></script>
         <script src="js/app/main/mainservice.js"></script>
-
+        <script src="js/ng/angular-route.js"></script>
+        <script src="js/app/profile/profilecontroller.js"></script>
+        
     </head>
     <body ng-app="je">
         <div ng-controller="MainController">
+            
+            <a href="#/profile">Home</a>
+            <a href="#/profile/about">About</a>
+            <a href="#/profile/contact">Contact</a>
+            <a href="#/profile/param">Param</a>
+            <a href="#/profile/biodata207225">Biodata</a>
+            
+            <div>
+                <div ng-view>
+                    
+                </div>
+                <br>
+                <br>
+                <br>
+                <hr>
+                <hr>
+                <hr>
+            </div>
+            
             <div>
                 {{title}}
                 <br>

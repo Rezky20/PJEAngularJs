@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<h3>{{title}}</h3>
+<div>
+    select index : 
+    <select name="biodataIndex" ng-model="biodataIndex">
+        <option value="{{$index}}" ng-repeat="biodata in biodataAnggota">{{biodata.nama}}</option>
+    </select>
+    <button ng-click="biodataDetail(biodataIndex)">Detail</button>
+    <button ng-if="biodata" ng-click="biodataClear()">Reset</button>
+</div>
+<div ng-if="!biodata">
+    <ul ng-repeat="bio in biodataAnggota">
+        <li>
+            <label>Nama: </label>{{bio.nama}}<br>
+            <label>NIM : </label>{{bio.nim}}<br>
+            <label>Email : </label>{{bio.email}}<br>
+            <label>Tanggal Lahir: </label>{{bio.tglLahir| date}}<br>
+        </li>
+    </ul>
+</div>
+<div ng-if="biodata">
+    <label>Nama: </label>{{biodata.nama}}<br>
+    <label>NIM : </label>{{biodata.nim}}<br>
+    <label>Email : </label>{{biodata.email}}<br>
+    <label>Tanggal Lahir: </label>{{biodata.tglLahir| date}}<br>
+</div>
+
+
